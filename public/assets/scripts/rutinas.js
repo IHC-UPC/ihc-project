@@ -1,11 +1,13 @@
-let rutinas = [
+// Cargar rutinas desde localStorage o usar rutinas por defecto
+let rutinas = JSON.parse(localStorage.getItem('smartwatt_rutinas')) || [
     { 
         id: 1, 
         nombre: 'Computadora', 
         activa: true, 
         encendido: '7:00 AM', 
         apagado: '11:00 PM',
-        estado: true 
+        estado: true,
+        imagen: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=300&fit=crop'
     },
     { 
         id: 2, 
@@ -13,7 +15,8 @@ let rutinas = [
         activa: true, 
         encendido: '6:00 AM', 
         apagado: '5:00 PM',
-        estado: true 
+        estado: true,
+        imagen: 'https://images.unsplash.com/photo-1564404493814-0b1629f77cfe?w=400&h=300&fit=crop'
     },
     { 
         id: 3, 
@@ -21,7 +24,8 @@ let rutinas = [
         activa: true, 
         encendido: '7:00 AM', 
         apagado: '11:00 PM',
-        estado: true 
+        estado: true,
+        imagen: 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=300&fit=crop'
     },
     { 
         id: 4, 
@@ -29,9 +33,16 @@ let rutinas = [
         activa: false, 
         encendido: '7:00 AM', 
         apagado: '7:00 PM',
-        estado: false 
+        estado: false,
+        imagen: 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=300&fit=crop'
     }
 ];
+
+// Guardar rutinas en localStorage
+function guardarRutinas() {
+    localStorage.setItem('smartwatt_rutinas', JSON.stringify(rutinas));
+}
+
 function initializeToggleSwitches() {
     const toggleSwitches = document.querySelectorAll('.switch input[type="checkbox"]');
     toggleSwitches.forEach((toggle, index) => {
@@ -58,6 +69,7 @@ function initializeToggleSwitches() {
                 rutinas[index].activa = false;
                 showNotification('info', `${rutinas[index].nombre} desactivada`);
             }
+            guardarRutinas(); // Guardar cambios en localStorage
             console.log('Rutina actualizada:', rutinas[index]);
         });
     });
@@ -193,9 +205,26 @@ notificationStyles.textContent = `
 document.head.appendChild(notificationStyles);
 document.addEventListener('DOMContentLoaded', () => {
     console.log('SmartWatt - Rutinas cargadas');
+    renderizarRutinas(); // Renderizar rutinas desde localStorage
     initializeToggleSwitches();
     initializeCarousel();
 });
+
+// Función para renderizar todas las rutinas
+function renderizarRutinas() {
+    const rutinasGrid = document.querySelector('.rutinas-grid');
+    if (!rutinasGrid) return;
+    
+    // Limpiar grid
+    rutinasGrid.innerHTML = '';
+    
+    // Renderizar cada rutina
+    rutinas.forEach(rutina => {
+        const card = crearCardRutina(rutina);
+        rutinasGrid.insertAdjacentHTML('beforeend', card);
+    });
+}
+
 window.SmartWattRutinas = {
     getRutinas: () => rutinas,
     toggleRutina: (id) => {
@@ -339,6 +368,9 @@ function crearNuevaRutina() {
 
     // Añadir a array de rutinas
     rutinas.push(nuevaRutina);
+    
+    // Guardar en localStorage
+    guardarRutinas();
 
     // Crear el HTML de la nueva card
     const rutinasGrid = document.querySelector('.rutinas-grid');
@@ -370,37 +402,23 @@ function crearCardRutina(rutina) {
         <div class="rutina-card">
             <div class="rutina-image">
                 <img src="${rutina.imagen}" alt="${rutina.nombre}">
-                <span class="rutina-badge ${rutina.activa ? 'activa' : 'inactiva'}">
+                <div class="rutina-badge ${rutina.activa ? 'activa' : 'inactiva'}">
                     ${rutina.activa ? 'Activa' : 'Inactiva'}
-                </span>
+                </div>
             </div>
             <div class="rutina-info">
-                <h3 class="rutina-nombre">${rutina.nombre}</h3>
-                <div class="rutina-horarios">
-                    <div class="horario-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <div class="horario-details">
-                            <span class="horario-label">ENCENDIDO</span>
-                            <span class="horario-time">${rutina.encendido}</span>
-                        </div>
+                <h4>${rutina.nombre}</h4>
+                <div class="rutina-schedule">
+                    <div class="schedule-item">
+                        <span class="schedule-label">Encendido</span>
+                        <span class="schedule-time">${rutina.encendido}</span>
                     </div>
-                    <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12 5 19 12 12 19"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="9 18 15 12 9 6"/>
                     </svg>
-                    <div class="horario-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="15" y1="9" x2="9" y2="15"/>
-                            <line x1="9" y1="9" x2="15" y2="15"/>
-                        </svg>
-                        <div class="horario-details">
-                            <span class="horario-label">APAGADO</span>
-                            <span class="horario-time">${rutina.apagado}</span>
-                        </div>
+                    <div class="schedule-item">
+                        <span class="schedule-label">Apagado</span>
+                        <span class="schedule-time">${rutina.apagado}</span>
                     </div>
                 </div>
                 <div class="rutina-toggle">
@@ -408,7 +426,7 @@ function crearCardRutina(rutina) {
                         <input type="checkbox" ${rutina.estado ? 'checked' : ''}>
                         <span class="slider"></span>
                     </label>
-                    <span style="color: ${rutina.estado ? '#2ecc71' : 'rgba(255, 255, 255, 0.6)'}">
+                    <span style="color: ${rutina.estado ? '#2ecc71' : 'rgba(255, 255, 255, 0.6)'};">
                         ${rutina.estado ? 'Encendido' : 'Apagado'}
                     </span>
                 </div>
@@ -416,4 +434,5 @@ function crearCardRutina(rutina) {
         </div>
     `;
 }
+
 
