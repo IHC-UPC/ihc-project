@@ -37,13 +37,21 @@ if (loginForm) {
         setTimeout(() => {
             hideLoading();
             
-            const usuariosValidos = [
+            // Usuarios por defecto (admin)
+            const usuariosDefault = [
                 { email: 'leonardo@smartwatt.com', password: '123456' },
                 { email: 'admin@smartwatt.com', password: 'admin123' },
                 { email: 'demo@smartwatt.com', password: 'demo123' }
             ];
             
-            const usuario = usuariosValidos.find(u => u.email === email && u.password === password);
+            // Obtener usuarios registrados del localStorage
+            const usuariosRegistrados = JSON.parse(localStorage.getItem('usuarios')) || [];
+            
+            // Combinar usuarios default con registrados
+            const todosLosUsuarios = [...usuariosDefault, ...usuariosRegistrados];
+            
+            // Buscar usuario
+            const usuario = todosLosUsuarios.find(u => u.email === email && u.password === password);
             
             if (usuario) {
                 showNotification('¡Inicio de sesión exitoso!', 'success');
@@ -52,6 +60,12 @@ if (loginForm) {
                 }
                 localStorage.setItem('smartwatt_logged_in', 'true');
                 localStorage.setItem('smartwatt_user_email', email);
+                
+                // Guardar nombre si existe
+                if (usuario.nombre) {
+                    localStorage.setItem('smartwatt_user_name', usuario.nombre + ' ' + usuario.apellido);
+                }
+                
                 setTimeout(() => {
                     window.location.href = 'home.html'; 
                 }, 1500);

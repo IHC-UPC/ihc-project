@@ -102,19 +102,40 @@ if (registroForm) {
         showLoading();
         setTimeout(() => {
             hideLoading();
-            const success = Math.random() > 0.2; 
-            if (success) {
-                showNotification('¡Cuenta creada exitosamente!', 'success');
-                registroForm.reset();
-                strengthFill.style.width = '0%';
-                strengthText.textContent = 'Ingresa una contraseña';
-                strengthText.style.color = '#718096';
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 2000);
-            } else {
+            
+            // Obtener usuarios registrados del localStorage
+            let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+            
+            // Verificar si el email ya existe
+            const emailExiste = usuarios.some(u => u.email === email);
+            
+            if (emailExiste) {
                 showNotification('El correo ya está registrado. Intenta con otro.', 'error');
+                return;
             }
+            
+            // Guardar nuevo usuario
+            const nuevoUsuario = {
+                nombre: nombre,
+                apellido: apellido,
+                email: email,
+                telefono: telefono,
+                password: password,
+                fechaRegistro: new Date().toISOString()
+            };
+            
+            usuarios.push(nuevoUsuario);
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+            
+            showNotification('¡Cuenta creada exitosamente!', 'success');
+            registroForm.reset();
+            strengthFill.style.width = '0%';
+            strengthText.textContent = 'Ingresa una contraseña';
+            strengthText.style.color = '#718096';
+            
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 2000);
         }, 2500);
     });
 }
