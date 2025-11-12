@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartWatt - Rutinas">
+    <title>SmartWatt - Rutinas</title>
+    <link rel="stylesheet" href="rutinas.css">
+</head>
+<body class="rutinas-page">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-sidebar">
+                <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="18" y="5" width="8" height="20" rx="4" fill="white"/>
+                    <rect x="34" y="5" width="8" height="20" rx="4" fill="white"/>
+                    <path d="M 12 25 L 12 60 Q 12 72 22 72 L 38 72 Q 48 72 48 60 L 48 25 Z" fill="white"/>
+                    <path d="M 23 40 Q 30 35 37 40" stroke="#00D9FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M 20 50 Q 30 43 40 50" stroke="#00D9FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1>SMARTWATT</h1>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span>Inicio</span>
+            </a>
+            <a href="rutinas.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span>Rutinas</span>
+            </a>
+            <a href="reportes.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="9" y1="21" x2="9" y2="9"/>
+                </svg>
+                <span>Reportes</span>
+            </a>
+            <a href="prorrateo.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>Prorrateo</span>
+            </a>
+            <a href="metas.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                    <path d="M16 8a6 6 0 0 1 0 8"/>
+                </svg>
+                <span>Metas</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-item logout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+
+    <main class="rutinas-main">
+
+        <header class="rutinas-header">
+            <div class="header-left">
+                <h2>Rutinas</h2>
+                <p class="subtitle">Automatiza tus dispositivos según tu horario</p>
+            </div>
+            <div class="header-right">
+                <button class="btn-notif" id="headerNotifBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                    </svg>
+                    <span class="notif-badge" id="headerNotifBadge">0</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="Usuario">
+                    <div class="user-info">
+                        <span class="user-name">Leonardo Sánchez</span>
+                        <span class="user-role">Usuario Premium</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="rutinas-content">
+
+            <div class="section-header">
+                <div class="section-title">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <div>
+                        <h3>Mis Rutinas</h3>
+                        <p>Automatiza tus dispositivos según tu horario</p>
+                    </div>
+                </div>
+                <button class="btn-nueva-rutina">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    Nueva Rutina
+                </button>
+            </div>
+
+
+            <div class="rutinas-container">
+                <button class="carousel-btn prev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                </button>
+
+                <div class="rutinas-grid">
+
+                    <div class="rutina-card">
+                        <div class="rutina-image">
+                            <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=300&fit=crop" alt="Computadora">
+                            <div class="rutina-badge activa">Activa</div>
+                        </div>
+                        <div class="rutina-info">
+                            <h4>Computadora</h4>
+                            <div class="rutina-schedule">
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Encendido</span>
+                                    <span class="schedule-time">7:00 AM</span>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Apagado</span>
+                                    <span class="schedule-time">11:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="rutina-toggle">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <span style="color: #2ecc71;">Encendido</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rutina-card">
+                        <div class="rutina-image">
+                            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&h=300&fit=crop" alt="Cargador">
+                            <div class="rutina-badge activa">Activa</div>
+                        </div>
+                        <div class="rutina-info">
+                            <h4>Cargador</h4>
+                            <div class="rutina-schedule">
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Encendido</span>
+                                    <span class="schedule-time">6:00 AM</span>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Apagado</span>
+                                    <span class="schedule-time">5:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="rutina-toggle">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <span style="color: #2ecc71;">Encendido</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rutina-card">
+                        <div class="rutina-image">
+                            <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=300&fit=crop" alt="Refrigerador">
+                            <div class="rutina-badge activa">Activa</div>
+                        </div>
+                        <div class="rutina-info">
+                            <h4>Refrigerador</h4>
+                            <div class="rutina-schedule">
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Encendido</span>
+                                    <span class="schedule-time">7:00 AM</span>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Apagado</span>
+                                    <span class="schedule-time">11:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="rutina-toggle">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                                <span style="color: #2ecc71;">Encendido</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="rutina-card">
+                        <div class="rutina-image">
+                            <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400&h=300&fit=crop" alt="Televisor">
+                            <div class="rutina-badge inactiva">Inactiva</div>
+                        </div>
+                        <div class="rutina-info">
+                            <h4>Televisor</h4>
+                            <div class="rutina-schedule">
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Encendido</span>
+                                    <span class="schedule-time">7:00 AM</span>
+                                </div>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                                <div class="schedule-item">
+                                    <span class="schedule-label">Apagado</span>
+                                    <span class="schedule-time">7:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="rutina-toggle">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                                <span style="color: rgba(255, 255, 255, 0.6);">Apagado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <button class="floating-notif-btn" id="floatingBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+
+    <div class="floating-panel chat-panel" id="floatingPanel">
+        <div class="floating-header">
+            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #0A84FF, #00D9FF); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                    🤖
+                </div>
+                <div>
+                    <h4 style="margin: 0;">Asistente SmartWatt</h4>
+                    <p style="margin: 0; font-size: 0.75rem; color: #00D9FF;">En línea</p>
+                </div>
+            </div>
+            <button class="close-panel" id="closePanel">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="floating-content chat-content" id="chatContent">
+        </div>
+        <div class="floating-footer chat-footer">
+            <form id="chatForm" style="display: flex; gap: 0.5rem; width: 100%;">
+                <input 
+                    type="text" 
+                    id="chatInput" 
+                    placeholder="Escribe tu mensaje..."
+                    style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.75rem 1rem; border-radius: 12px; color: white; font-size: 0.9rem;"
+                    autocomplete="off"
+                />
+                <button 
+                    type="submit"
+                    style="background: linear-gradient(135deg, #0A84FF, #00D9FF); border: none; padding: 0.75rem 1.2rem; border-radius: 12px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease;"
+                >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="notif-dropdown" id="notifDropdown">
+        <div class="notif-dropdown-header">
+            <h4>Notificaciones</h4>
+            <button class="mark-all-read" id="markAllReadHeader">Marcar todas</button>
+        </div>
+        <div class="notif-dropdown-content" id="notifDropdownContent">
+        </div>
+        <div class="notif-dropdown-footer">
+            <a href="notificaciones.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+
+    <!-- Modal Nueva Rutina -->
+    <div class="modal-overlay" id="modalNuevaRutina">
+        <div class="modal-rutina">
+            <div class="modal-header">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    Nueva Rutina
+                </h2>
+                <button class="modal-close" id="closeModalRutina">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formNuevaRutina">
+                    <div class="form-group">
+                        <label for="nombreDispositivo">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                                <line x1="6" y1="18" x2="6.01" y2="18"/>
+                            </svg>
+                            Nombre del Dispositivo
+                        </label>
+                        <input type="text" id="nombreDispositivo" name="nombreDispositivo" placeholder="Ej: Aire Acondicionado" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="horaEncendido">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                Hora de Encendido
+                            </label>
+                            <input type="time" id="horaEncendido" name="horaEncendido" value="07:00" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="horaApagado">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="15" y1="9" x2="9" y2="15"/>
+                                    <line x1="9" y1="9" x2="15" y2="15"/>
+                                </svg>
+                                Hora de Apagado
+                            </label>
+                            <input type="time" id="horaApagado" name="horaApagado" value="22:00" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imagenDispositivo">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            Imagen del Dispositivo
+                        </label>
+                        <select id="imagenDispositivo" name="imagenDispositivo" required>
+                            <option value="">Selecciona una imagen</option>
+                            <option value="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=300&fit=crop">Computadora</option>
+                            <option value="https://images.unsplash.com/photo-1564404493814-0b1629f77cfe?w=400&h=300&fit=crop">Cargador</option>
+                            <option value="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=300&fit=crop">Refrigerador</option>
+                            <option value="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=300&fit=crop">Televisor</option>
+                            <option value="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=300&fit=crop">Aire Acondicionado</option>
+                            <option value="https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=400&h=300&fit=crop">Lavadora</option>
+                            <option value="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400&h=300&fit=crop">Microondas</option>
+                            <option value="https://images.unsplash.com/photo-1604754742629-3e580a774a56?w=400&h=300&fit=crop">Lámpara</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="activarInmediatamente" name="activarInmediatamente" checked>
+                            <span>Activar rutina inmediatamente</span>
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="cancelarRutina">Cancelar</button>
+                        <button type="submit" class="btn-primary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Crear Rutina
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app-state.js"></script>
+    <script src="header-notifications.js"></script>
+    <script src="chat-ia.js"></script>
+    <script src="rutinas.js"></script>
+</body>
+</html>

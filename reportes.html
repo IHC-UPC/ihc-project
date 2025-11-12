@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartWatt - Reportes de Consumo">
+    <title>SmartWatt - Reportes</title>
+    <link rel="stylesheet" href="reportes.css">
+</head>
+<body class="reportes-page">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-sidebar">
+                <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="18" y="5" width="8" height="20" rx="4" fill="white"/>
+                    <rect x="34" y="5" width="8" height="20" rx="4" fill="white"/>
+                    <path d="M 12 25 L 12 60 Q 12 72 22 72 L 38 72 Q 48 72 48 60 L 48 25 Z" fill="white"/>
+                    <path d="M 23 40 Q 30 35 37 40" stroke="#00D9FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M 20 50 Q 30 43 40 50" stroke="#00D9FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1>SMARTWATT</h1>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="home.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span>Inicio</span>
+            </a>
+            <a href="rutinas.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <span>Rutinas</span>
+            </a>
+            <a href="reportes.html" class="nav-item active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+                <span>Reportes</span>
+            </a>
+            <a href="prorrateo.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <span>Prorrateo</span>
+            </a>
+            <a href="metas.html" class="nav-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                    <path d="M16 8a6 6 0 0 1 0 8"/>
+                </svg>
+                <span>Metas</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="nav-item logout">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+
+    <main class="reportes-main">
+
+        <header class="reportes-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="page-title">Reportes de Consumo</h1>
+                    <p class="page-subtitle">Analiza tu consumo energético y optimiza tu ahorro</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-notif" id="headerNotifBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span class="notif-badge" id="headerNotifBadge">0</span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="Usuario">
+                        <div class="user-info">
+                            <span class="user-name">Leonardo Sánchez</span>
+                            <span class="user-role">Usuario Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="reportes-content">
+
+            <div class="controls-section">
+                <div class="filters-group">
+                    <div class="filter-card">
+                        <label class="filter-label">Seleccionar Mes</label>
+                        <select class="filter-select" id="mesSelect">
+                            <option value="1">Enero</option>
+                            <option value="2">Febrero</option>
+                            <option value="3">Marzo</option>
+                            <option value="4">Abril</option>
+                            <option value="5">Mayo</option>
+                            <option value="6">Junio</option>
+                            <option value="7">Julio</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Septiembre</option>
+                            <option value="10" selected>Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-card">
+                        <label class="filter-label">Año</label>
+                        <select class="filter-select" id="yearSelect">
+                            <option value="2022">2022</option>
+                            <option value="2023" selected>2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-export">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Exportar
+                    </button>
+                </div>
+
+                <div class="limite-card">
+                    <div class="limite-content">
+                        <span class="limite-label">Límite de Energía</span>
+                        <div class="limite-value">
+                            <span class="limite-number">8</span>
+                            <span class="limite-unit">kWh</span>
+                        </div>
+                    </div>
+                    <button class="btn-edit-limite">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="stats-section">
+                <div class="consumo-card">
+                    <h2 class="consumo-title">Energía Consumida</h2>
+                    <div class="consumo-main">
+                        <span class="consumo-value" id="consumoTotal">236</span>
+                        <span class="consumo-unit">kWh</span>
+                    </div>
+                    <div class="consumo-promedio">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span>Promedio diario: <strong id="promedioDiario">7.6</strong> kWh</span>
+                    </div>
+                    <div class="consumo-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Mayor consumo</span>
+                            <span class="stat-value" id="mayorConsumo">12.8 kWh</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Menor consumo</span>
+                            <span class="stat-value" id="menorConsumo">3.2 kWh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Consumo Semanal</h3>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color"></span>
+                                <span>kWh por día</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="consumoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+            <section class="dispositivos-section">
+                <div class="section-header">
+                    <h2 class="section-title">📊 Consumo por Dispositivo</h2>
+                    <p class="section-subtitle">Identifica qué dispositivos consumen más energía</p>
+                </div>
+
+                <div class="dispositivos-grid">
+                    <div class="dispositivo-card">
+                        <div class="dispositivo-icon">
+                            <img src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=100&h=100&fit=crop" alt="Refrigerador">
+                        </div>
+                        <div class="dispositivo-info">
+                            <h4>Refrigerador</h4>
+                            <div class="dispositivo-consumo">
+                                <span class="consumo-number">89.5</span>
+                                <span class="consumo-unit-small">kWh/mes</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="porcentaje">38% del total</span>
+                        </div>
+                    </div>
+
+                    <div class="dispositivo-card">
+                        <div class="dispositivo-icon">
+                            <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=100&h=100&fit=crop" alt="Computadora">
+                        </div>
+                        <div class="dispositivo-info">
+                            <h4>Computadora</h4>
+                            <div class="dispositivo-consumo">
+                                <span class="consumo-number">62.3</span>
+                                <span class="consumo-unit-small">kWh/mes</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="porcentaje">26% del total</span>
+                        </div>
+                    </div>
+
+                    <div class="dispositivo-card">
+                        <div class="dispositivo-icon">
+                            <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=100&h=100&fit=crop" alt="Televisor">
+                        </div>
+                        <div class="dispositivo-info">
+                            <h4>Televisor</h4>
+                            <div class="dispositivo-consumo">
+                                <span class="consumo-number">48.7</span>
+                                <span class="consumo-unit-small">kWh/mes</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                            <span class="porcentaje">21% del total</span>
+                        </div>
+                    </div>
+
+                    <div class="dispositivo-card">
+                        <div class="dispositivo-icon">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=100&fit=crop" alt="Plancha">
+                        </div>
+                        <div class="dispositivo-info">
+                            <h4>Plancha</h4>
+                            <div class="dispositivo-consumo">
+                                <span class="consumo-number">35.5</span>
+                                <span class="consumo-unit-small">kWh/mes</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 35%"></div>
+                            </div>
+                            <span class="porcentaje">15% del total</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="recomendaciones-section">
+                <div class="section-header">
+                    <h2 class="section-title">💡 Recomendaciones de Ahorro</h2>
+                    <p class="section-subtitle">Consejos para reducir tu consumo energético</p>
+                </div>
+
+                <div class="recomendaciones-grid">
+                    <div class="recomendacion-card high">
+                        <div class="rec-priority">Alta Prioridad</div>
+                        <h4>Reduce uso del refrigerador</h4>
+                        <p>Tu refrigerador consume 38% de tu energía total. Ajusta la temperatura a 3-4°C y congela a -18°C.</p>
+                        <div class="rec-ahorro">
+                            <span>Ahorro potencial:</span>
+                            <strong>~ S/ 45/mes</strong>
+                        </div>
+                    </div>
+
+                    <div class="recomendacion-card medium">
+                        <div class="rec-priority medium">Media Prioridad</div>
+                        <h4>Optimiza horarios de PC</h4>
+                        <p>Programa apagado automático de tu computadora en horarios no utilizados.</p>
+                        <div class="rec-ahorro">
+                            <span>Ahorro potencial:</span>
+                            <strong>~ S/ 28/mes</strong>
+                        </div>
+                    </div>
+
+                    <div class="recomendacion-card low">
+                        <div class="rec-priority low">Baja Prioridad</div>
+                        <h4>Uso eficiente del TV</h4>
+                        <p>Activa el modo eco y reduce el brillo de pantalla para optimizar el consumo.</p>
+                        <div class="rec-ahorro">
+                            <span>Ahorro potencial:</span>
+                            <strong>~ S/ 15/mes</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <button class="floating-notif-btn" id="floatingBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+
+    <div class="floating-panel chat-panel" id="floatingPanel">
+        <div class="floating-header">
+            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #0A84FF, #00D9FF); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                    🤖
+                </div>
+                <div>
+                    <h4 style="margin: 0;">Asistente SmartWatt</h4>
+                    <p style="margin: 0; font-size: 0.75rem; color: #00D9FF;">En línea</p>
+                </div>
+            </div>
+            <button class="close-panel" id="closePanel">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="floating-content chat-content" id="chatContent">
+        </div>
+        <div class="floating-footer chat-footer">
+            <form id="chatForm" style="display: flex; gap: 0.5rem; width: 100%;">
+                <input 
+                    type="text" 
+                    id="chatInput" 
+                    placeholder="Escribe tu mensaje..."
+                    style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 0.75rem 1rem; border-radius: 12px; color: white; font-size: 0.9rem;"
+                    autocomplete="off"
+                />
+                <button 
+                    type="submit"
+                    style="background: linear-gradient(135deg, #0A84FF, #00D9FF); border: none; padding: 0.75rem 1.2rem; border-radius: 12px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s ease;"
+                >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="notif-dropdown" id="notifDropdown">
+        <div class="notif-dropdown-header">
+            <h4>Notificaciones</h4>
+            <button class="mark-all-read" id="markAllReadHeader">Marcar todas</button>
+        </div>
+        <div class="notif-dropdown-content" id="notifDropdownContent">
+        </div>
+        <div class="notif-dropdown-footer">
+            <a href="notificaciones.html">Ver todas las notificaciones</a>
+        </div>
+    </div>
+
+    <script src="app-state.js"></script>
+    <script src="header-notifications.js"></script>
+    <script src="chat-ia.js"></script>
+    <script src="reportes.js"></script>
+</body>
+</html>
