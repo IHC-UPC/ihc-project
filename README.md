@@ -6,7 +6,7 @@ SmartWatt es una solución digital innovadora para la gestión inteligente del c
 
 ## 👥 Autores
 
-- **Matias** - Desarrollador Principal
+- **Leonardo Matias Sanchez Benavente** - Desarrollador Principal
 - **Equipo SmartWatt** - Diseño y Desarrollo
 
 ## 🎯 Objetivos del Proyecto
@@ -265,7 +265,7 @@ Este proyecto es parte de un curso académico de Interacción Humano-Computadora
 
 ## 📧 Contacto
 
-**Matias** - [@Matiassb06](https://github.com/Matiassb06)
+**Leonardo Matias Sanchez Benavente** - [@Matiassb06](https://github.com/Matiassb06)
 
 **Link del Proyecto**: [https://github.com/Matiassb06/ihc-project](https://github.com/Matiassb06/ihc-project)
 
