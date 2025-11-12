@@ -7,7 +7,9 @@ SmartWatt es una solución digital innovadora para la gestión inteligente del c
 ## 👥 Autores
 
 - **Leonardo Matias Sanchez Benavente** - Desarrollador Principal
-- **Equipo SmartWatt** - Diseño y Desarrollo
+- **Lui Mathias Gamero Miranda** - Asistente de Desarrollo
+- **Eduardo Manuel Aguirre Ramos** - Asistente de Desarrollo
+- **Sebastian Jared Roman Zevallos** - Asistente de Desarrollo
 
 ## 🎯 Objetivos del Proyecto
 
