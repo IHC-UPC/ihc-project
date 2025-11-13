@@ -136,7 +136,7 @@ ihc-project/
 ## 🚀 Instalación y Uso
 
 ### Requisitos Previos
-- Navegador web moderno (Chrome, Firefox, Edge, Safari)
+- Navegador web moderno (Chrome,Firefox,Edge,Safari)
 - Servidor local (opcional: Live Server, Python HTTP Server, etc.)
 
 ### Pasos de Instalación
