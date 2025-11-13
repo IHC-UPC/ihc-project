@@ -227,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarRutinas(); // Renderizar rutinas desde localStorage
     initializeToggleSwitches();
     initializeCarousel();
+    initializeDeleteButtons(); // Inicializar botones de eliminar
 });
 
 // Función para renderizar todas las rutinas
@@ -242,6 +243,44 @@ function renderizarRutinas() {
         const card = crearCardRutina(rutina);
         rutinasGrid.insertAdjacentHTML('beforeend', card);
     });
+}
+
+// Función para inicializar botones de eliminar
+function initializeDeleteButtons() {
+    document.addEventListener('click', (e) => {
+        const deleteBtn = e.target.closest('.btn-delete-rutina');
+        if (deleteBtn) {
+            const rutinaId = parseInt(deleteBtn.getAttribute('data-rutina-id'));
+            eliminarRutina(rutinaId);
+        }
+    });
+}
+
+// Función para eliminar una rutina
+function eliminarRutina(id) {
+    const rutina = rutinas.find(r => r.id === id);
+    if (!rutina) return;
+    
+    // Confirmar eliminación
+    if (confirm(`¿Estás seguro de eliminar la rutina "${rutina.nombre}"?`)) {
+        // Encontrar índice y eliminar
+        const index = rutinas.findIndex(r => r.id === id);
+        if (index !== -1) {
+            rutinas.splice(index, 1);
+            
+            // Guardar cambios
+            guardarRutinas();
+            
+            // Re-renderizar
+            renderizarRutinas();
+            
+            // Reinicializar event listeners
+            initializeToggleSwitches();
+            
+            // Mostrar notificación
+            showNotification('success', `Rutina "${rutina.nombre}" eliminada correctamente`);
+        }
+    }
 }
 
 window.SmartWattRutinas = {
@@ -418,12 +457,20 @@ function crearNuevaRutina() {
 
 function crearCardRutina(rutina) {
     return `
-        <div class="rutina-card">
+        <div class="rutina-card" data-rutina-id="${rutina.id}">
             <div class="rutina-image">
-                <img src="${rutina.imagen}" alt="${rutina.nombre}">
+                <img src="${rutina.imagen || 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=300&fit=crop'}" alt="${rutina.nombre}">
                 <div class="rutina-badge ${rutina.activa ? 'activa' : 'inactiva'}">
                     ${rutina.activa ? 'Activa' : 'Inactiva'}
                 </div>
+                <button class="btn-delete-rutina" data-rutina-id="${rutina.id}" title="Eliminar rutina">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                        <line x1="10" y1="11" x2="10" y2="17"/>
+                        <line x1="14" y1="11" x2="14" y2="17"/>
+                    </svg>
+                </button>
             </div>
             <div class="rutina-info">
                 <h4>${rutina.nombre}</h4>
