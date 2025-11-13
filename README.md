@@ -16,6 +16,7 @@ SmartWatt es una solución digital innovadora para la gestión inteligente del c
 ### Objetivo General
 Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar eficientemente su consumo energético, reduciendo costos y promoviendo prácticas sostenibles.
 
+
 ### Objetivos Específicos
 - ✅ Monitorear en tiempo real el consumo energético de dispositivos
 - ✅ Automatizar el encendido/apagado de dispositivos mediante rutinas programadas
@@ -23,6 +24,7 @@ Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar ef
 - ✅ Implementar sistema de prorrateo para compartir gastos de energía
 - ✅ Proporcionar metas de ahorro energético personalizadas
 - ✅ Ofrecer notificaciones y recomendaciones inteligentes
+
 
 ## ✨ Características Principales
 
