@@ -38,6 +38,25 @@ let rutinas = JSON.parse(localStorage.getItem('smartwatt_rutinas')) || [
     }
 ];
 
+// Asignar imágenes por defecto a rutinas antiguas que no las tengan
+const imagenesDefault = {
+    'Computadora': 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400&h=300&fit=crop',
+    'Cargador': 'https://images.unsplash.com/photo-1564404493814-0b1629f77cfe?w=400&h=300&fit=crop',
+    'Refrigerador': 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=300&fit=crop',
+    'Televisor': 'https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=300&fit=crop'
+};
+
+rutinas.forEach(rutina => {
+    if (!rutina.imagen) {
+        rutina.imagen = imagenesDefault[rutina.nombre] || 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400&h=300&fit=crop';
+    }
+});
+
+// Guardar rutinas actualizadas
+if (localStorage.getItem('smartwatt_rutinas')) {
+    localStorage.setItem('smartwatt_rutinas', JSON.stringify(rutinas));
+}
+
 // Guardar rutinas en localStorage
 function guardarRutinas() {
     localStorage.setItem('smartwatt_rutinas', JSON.stringify(rutinas));
