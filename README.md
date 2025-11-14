@@ -4,12 +4,14 @@
 
 SmartWatt es una solución digital innovadora para la gestión inteligente del consumo energético en hogares y edificios. La plataforma permite a los usuarios monitorear, controlar y optimizar el uso de energía de sus dispositivos mediante automatización de rutinas, análisis de consumo y recomendaciones personalizadas basadas en inteligencia artificial.
 
+
 ##  Autores
 
 - **Leonardo Matias Sanchez Benavente** - Desarrollador Principal
 - **Lui Mathias Gamero Miranda** - Asistente de Desarrollo
 - **Eduardo Manuel Aguirre Ramos** - Asistente de Desarrollo
 - **Sebastian Jared Roman Zevallos** - Asistente de Desarrollo
+
 
 ##  Objetivos del Proyecto
 
@@ -34,11 +36,13 @@ Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar ef
 - Tarjetas de estadísticas (consumo diario, semanal, mensual)
 - Gráficos interactivos de tendencias
 
+
 ###  Gestión de Rutinas
 - Creación de rutinas personalizadas para dispositivos
 - Programación de horarios de encendido/apagado
 - Activación/desactivación automática
 - Panel visual de todas las rutinas activas
+
 
 ###  Reportes y Análisis
 - Gráficos de consumo por dispositivo
@@ -46,11 +50,13 @@ Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar ef
 - Análisis de picos de consumo
 - Exportación de datos
 
+
 ###  Prorrateo de Gastos
 - Distribución equitativa de costos energéticos
 - Gestión de participantes
 - Cálculo automático de cuotas
 - Historial de pagos
+
 
 ###  Metas de Ahorro
 - Establecimiento de objetivos de reducción
@@ -58,11 +64,13 @@ Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar ef
 - Recomendaciones personalizadas
 - Gamificación del ahorro energético
 
+
 ###  Sistema de Notificaciones
 - Alertas de consumo elevado
 - Recomendaciones de optimización
 - Recordatorios de rutinas
 - Notificaciones en tiempo real
+
 
 ###  Asistente IA
 - Chat inteligente para consultas
