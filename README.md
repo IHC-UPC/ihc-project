@@ -251,8 +251,6 @@ git merge release/v1.0.0
 ##  Próximas Mejoras
 
 - [ ] Integración con API backend real
-- [ ] Autenticación con tokens JWT
-- [ ] Base de datos para persistencia
 - [ ] Panel de administración
 - [ ] Exportación de reportes a PDF
 - [ ] Notificaciones push
