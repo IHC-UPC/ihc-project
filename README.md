@@ -7,10 +7,10 @@ SmartWatt es una solución digital innovadora para la gestión inteligente del c
 
 ##  Autores
 
-- **Leonardo Matias Sanchez Benavente** - Desarrollador Principal
-- **Lui Mathias Gamero Miranda** - Asistente de Desarrollo
-- **Eduardo Manuel Aguirre Ramos** - Asistente de Desarrollo
-- **Sebastian Jared Roman Zevallos** - Asistente de Desarrollo
+- **Leonardo Matias Sanchez Benavente** - Desarrollador 
+- **Lui Mathias Gamero Miranda** - Desarrollador
+- **Eduardo Manuel Aguirre Ramos** - Desarrollador
+- **Sebastian Jared Roman Zevallos** - Desarrollador
 
 
 ##  Objetivos del Proyecto
@@ -259,7 +259,6 @@ git merge release/v1.0.0
 - [ ] Notificaciones push
 - [ ] Modo oscuro/claro
 - [ ] Soporte multiidioma
-- [ ] PWA (Progressive Web App)
 
 ##  Contribuciones
 
