@@ -6,6 +6,7 @@ const AppState = {
         foto: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop'
     },
 
+    
     dispositivos: [
         {
             id: 1,
@@ -90,6 +91,7 @@ const AppState = {
         tarifaPorKwh: 0.42
     },
 
+    
     notificaciones: [
         {
             id: 1,
