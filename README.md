@@ -1,76 +1,76 @@
 # SmartWatt - Sistema de Gestión de Energía Inteligente
 
-## 📋 Descripción del Proyecto
+##  Descripción del Proyecto
 
 SmartWatt es una solución digital innovadora para la gestión inteligente del consumo energético en hogares y edificios. La plataforma permite a los usuarios monitorear, controlar y optimizar el uso de energía de sus dispositivos mediante automatización de rutinas, análisis de consumo y recomendaciones personalizadas basadas en inteligencia artificial.
 
-## 👥 Autores
+##  Autores
 
 - **Leonardo Matias Sanchez Benavente** - Desarrollador Principal
 - **Lui Mathias Gamero Miranda** - Asistente de Desarrollo
 - **Eduardo Manuel Aguirre Ramos** - Asistente de Desarrollo
 - **Sebastian Jared Roman Zevallos** - Asistente de Desarrollo
 
-## 🎯 Objetivos del Proyecto
+##  Objetivos del Proyecto
 
 ### Objetivo General
 Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar eficientemente su consumo energético, reduciendo costos y promoviendo prácticas sostenibles.
 
 
 ### Objetivos Específicos
-- ✅ Monitorear en tiempo real el consumo energético de dispositivos
-- ✅ Automatizar el encendido/apagado de dispositivos mediante rutinas programadas
-- ✅ Generar reportes detallados de consumo con visualizaciones interactivas
-- ✅ Implementar sistema de prorrateo para compartir gastos de energía
-- ✅ Proporcionar metas de ahorro energético personalizadas
-- ✅ Ofrecer notificaciones y recomendaciones inteligentes
+-  Monitorear en tiempo real el consumo energético de dispositivos
+-  Automatizar el encendido/apagado de dispositivos mediante rutinas programadas
+-  Generar reportes detallados de consumo con visualizaciones interactivas
+-  Implementar sistema de prorrateo para compartir gastos de energía
+-  Proporcionar metas de ahorro energético personalizadas
+-  Ofrecer notificaciones y recomendaciones inteligentes
 
 
-## ✨ Características Principales
+##  Características Principales
 
-### 🏠 Dashboard Principal
+###  Dashboard Principal
 - Vista general del consumo energético
 - Indicadores de consumo en tiempo real
 - Tarjetas de estadísticas (consumo diario, semanal, mensual)
 - Gráficos interactivos de tendencias
 
-### ⏰ Gestión de Rutinas
+###  Gestión de Rutinas
 - Creación de rutinas personalizadas para dispositivos
 - Programación de horarios de encendido/apagado
 - Activación/desactivación automática
 - Panel visual de todas las rutinas activas
 
-### 📊 Reportes y Análisis
+###  Reportes y Análisis
 - Gráficos de consumo por dispositivo
 - Comparativas temporales (día/semana/mes)
 - Análisis de picos de consumo
 - Exportación de datos
 
-### 💰 Prorrateo de Gastos
+###  Prorrateo de Gastos
 - Distribución equitativa de costos energéticos
 - Gestión de participantes
 - Cálculo automático de cuotas
 - Historial de pagos
 
-### 🎯 Metas de Ahorro
+###  Metas de Ahorro
 - Establecimiento de objetivos de reducción
 - Seguimiento de progreso
 - Recomendaciones personalizadas
 - Gamificación del ahorro energético
 
-### 🔔 Sistema de Notificaciones
+###  Sistema de Notificaciones
 - Alertas de consumo elevado
 - Recomendaciones de optimización
 - Recordatorios de rutinas
 - Notificaciones en tiempo real
 
-### 💬 Asistente IA
+###  Asistente IA
 - Chat inteligente para consultas
 - Recomendaciones personalizadas
 - Análisis de patrones de consumo
 - Soporte 24/7
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 ### Frontend
 - **HTML5** - Estructura semántica
@@ -89,7 +89,7 @@ Desarrollar una plataforma web intuitiva que permita a los usuarios gestionar ef
 - **GitHub** - Repositorio remoto
 - **VS Code / WebStorm** - Editor de código
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 ihc-project/
@@ -135,7 +135,7 @@ ihc-project/
 └── README.md                        # Documentación del proyecto
 ```
 
-## 🚀 Instalación y Uso
+##  Instalación y Uso
 
 ### Requisitos Previos
 - Navegador web moderno (Chrome,Firefox,Edge,Safari)
@@ -168,7 +168,7 @@ ihc-project/
    - Login: `login.html` (usuario: admin / contraseña: admin)
    - Dashboard: `home.html`
 
-## 🎨 Diseño y UX
+##  Diseño y UX
 
 ### Paleta de Colores
 - **Primary Background**: `#0d1420` (Azul oscuro profundo)
@@ -179,13 +179,13 @@ ihc-project/
 - **Accent Red**: `rgba(255, 107, 107, 0.9)` (Rojo alerta)
 
 ### Características de Diseño
-- ✨ **Glassmorphism** - Efectos de vidrio esmerilado
-- 🌈 **Gradientes** - Transiciones de color suaves
-- 💫 **Animaciones** - Transiciones fluidas y micro-interacciones
-- 📱 **Responsive** - Adaptable a todos los dispositivos
-- 🎯 **Accesibilidad** - Alto contraste y navegación por teclado
+-  **Glassmorphism** - Efectos de vidrio esmerilado
+-  **Gradientes** - Transiciones de color suaves
+-  **Animaciones** - Transiciones fluidas y micro-interacciones
+-  **Responsive** - Adaptable a todos los dispositivos
+-  **Accesibilidad** - Alto contraste y navegación por teclado
 
-## 📊 Funcionalidades Implementadas
+##  Funcionalidades Implementadas
 
 - [x] Landing page atractiva con información del producto
 - [x] Sistema de autenticación (login/registro)
@@ -200,7 +200,7 @@ ihc-project/
 - [x] Diseño responsive
 - [x] Animaciones y transiciones
 
-## 🔄 GitFlow - Flujo de Trabajo
+##  GitFlow - Flujo de Trabajo
 
 Este proyecto sigue el modelo GitFlow:
 
@@ -240,7 +240,7 @@ git checkout develop
 git merge release/v1.0.0
 ```
 
-## 📝 Próximas Mejoras
+##  Próximas Mejoras
 
 - [ ] Integración con API backend real
 - [ ] Autenticación con tokens JWT
@@ -253,7 +253,7 @@ git merge release/v1.0.0
 - [ ] Soporte multiidioma
 - [ ] PWA (Progressive Web App)
 
-## 🤝 Contribuciones
+##  Contribuciones
 
 Las contribuciones son bienvenidas. Por favor:
 
@@ -263,11 +263,11 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+##  Licencia
 
 Este proyecto es parte de un curso académico de Interacción Humano-Computadora (IHC).
 
-## 📧 Contacto
+##  Contacto
 
 **Leonardo Matias Sanchez Benavente** - [@Matiassb06](https://github.com/Matiassb06)
 
@@ -275,4 +275,4 @@ Este proyecto es parte de un curso académico de Interacción Humano-Computadora
 
 ---
 
-⚡ **SmartWatt** - Transformando hogares en espacios inteligentes y sostenibles
+ **SmartWatt** - Transformando hogares en espacios inteligentes y sostenibles
