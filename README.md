@@ -253,7 +253,6 @@ git merge release/v1.0.0
 - [ ] Integración con API backend real
 - [ ] Autenticación con tokens JWT
 - [ ] Base de datos para persistencia
-- [ ] Integración con dispositivos IoT reales
 - [ ] Panel de administración
 - [ ] Exportación de reportes a PDF
 - [ ] Notificaciones push
